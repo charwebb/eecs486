@@ -11,9 +11,6 @@ def data():
     seinfeldData()
     southParkData()
     officeData()
-
-
-
     return
 
 
