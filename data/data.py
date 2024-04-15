@@ -29,7 +29,7 @@ def get_quotes_for_person(person):
                 if row_text.startswith('quotes about') or row_text.startswith('external links'):
                     break
                 # Check for "quotes" heading to start processing quotes
-                elif row_text.startswith('quotes'):
+                elif row_text.startswith('quotes') or row_text.startswith('quotations'):
                     processing_quotes = True
 
             elif processing_quotes and row.name == 'li':
