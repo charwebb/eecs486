@@ -5,11 +5,12 @@ import shutil
 import random
 import pandas as pd
 import re
+import csv, sys
 
 def data():
     seinfeldData()
     southParkData()
-
+    officeData()
 
 
 
@@ -71,8 +72,36 @@ def southParkData():
             file.writelines(group['Line'])
     return
 
+def officeData():
+    quotes_csv = 'office_quotes.csv'
+    character_quotes = {}
 
+    with open(quotes_csv, newline='') as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            character = row['speaker']
+            script = row['line_text']
 
+            charList = character.split("/")
+            for char in charList:
+                if char in character_quotes:
+                    character_quotes[char].append(script)
+                else:
+                    character_quotes[char] = []
+
+        if(os.path.isdir("OfficeQuotes") == False):
+            os.makedirs("OfficeQuotes")
+        os.chdir("OfficeQuotes")
+
+        for character in character_quotes:
+            if(len(character_quotes[character]) > 45):
+                newfile = character + ".txt"
+                with open(newfile, 'w') as output:
+                    for quote in character_quotes[character]:
+                        output.write(quote)
+                        output.write("\n")
+
+        return
 
 
 
