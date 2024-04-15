@@ -26,7 +26,7 @@ def get_quotes_for_person(person):
             if row.name == 'h2':
                 # Check for "quotes about" heading to stop processing quotes
                 row_text = row.get_text().lower()
-                if row_text.startswith('quotes about') or row_text.startswith('external links'):
+                if row_text.startswith('quotes about') or row_text.startswith('external links') or row_text.startswith('misattributed'):
                     break
                 # Check for "quotes" heading to start processing quotes
                 elif row_text.startswith('quotes') or row_text.startswith('quotations'):
