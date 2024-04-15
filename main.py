@@ -7,7 +7,10 @@ from evaluate.evaluate import evaluate
 
 def main():
     # Get Data
-    data()
+    user_input = input("Do you want to get data? (y/n): ")
+
+    if user_input.lower() == 'y':
+        data()
 
     # Run predictions
     model()
