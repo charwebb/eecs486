@@ -8,7 +8,7 @@ import re
 
 def data():
     seinfeldData()
-
+    southParkData()
 
 
 
@@ -38,8 +38,6 @@ def seinfeldData():
     character_counts = {k: v for k, v in character_counts.items() if k} # Removes all empties
     top_character_counts = {character: count for character, count in character_counts.items() if count > 35} # Only keeps top occurances
     
-    print(top_character_counts)
-
     for character in top_character_counts:
             group = df[df['Character'] == character]
             # Filename for each character
@@ -50,6 +48,38 @@ def seinfeldData():
                 file.writelines(group['Dialogue'] + '\n')
 
     return
+
+def southParkData():
+    output_directory = 'SouthParkQuotes'
+    quotes_csv = 'southpark_quotes.csv'
+    os.makedirs(output_directory, exist_ok=True)
+
+    df = pd.read_csv(quotes_csv)
+    df['Character'] = df['Character'].apply(cleanCharacterColumn)
+    df['Line'] = df['Line'].astype(str)
+    character_counts = df['Character'].value_counts().to_dict()
+    character_counts = {k: v for k, v in character_counts.items() if k} # Removes all empties
+    top_character_counts = {character: count for character, count in character_counts.items() if count > 35} # Only keeps top occurances
+
+    #print(top_character_counts)
+
+    for character in top_character_counts:
+        group = df[df['Character'] == character]
+        filename = os.path.join(output_directory, f"{character}.txt")
+        
+        with open(filename, 'w', encoding='utf-8') as file:
+            file.writelines(group['Line'])
+    return
+
+
+
+
+
+
+
+
+
+
 
 
 
