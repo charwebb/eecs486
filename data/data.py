@@ -3,6 +3,8 @@ from bs4 import BeautifulSoup, Tag
 import os
 import shutil
 import random
+import pandas as pd
+import re
 
 
 def get_quotes_for_person(person):
@@ -97,7 +99,7 @@ def write_quotes_to_files(person, quotes):
         for quote in test_quotes:
             test_file.write(quote + '\n')
 
-def data():
+def charlieData():
 
     # Reset data folders
     folder = 'quotes'
@@ -126,3 +128,33 @@ def data():
         else:
             print(f"No quotes found for {person}")
             print()
+
+
+def cleanCharacterColumn(name):
+    name = re.sub(r'/.*|\(.*|&.*|\[.*', '', name)
+    return name.strip().upper()
+
+def data(): 
+    output_directory = 'SeinfeldQuotes'
+    quotes_csv = 'seinfeld_quotes.csv'
+    os.makedirs(output_directory, exist_ok=True)
+
+    df = pd.read_csv(quotes_csv)
+    df['Character'] = df['Character'].apply(cleanCharacterColumn)
+    df['Dialogue'] = df['Dialogue'].astype(str)
+    character_counts = df['Character'].value_counts().to_dict()
+    character_counts = {k: v for k, v in character_counts.items() if k} # Removes all empties
+    top_character_counts = {character: count for character, count in character_counts.items() if count > 35} # Only keeps top occurances
+    
+    print(top_character_counts)
+
+    for character in top_character_counts:
+            group = df[df['Character'] == character]
+            # Filename for each character
+            filename = os.path.join(output_directory, f"{character}.txt")
+
+            # Write dialogues to the character's file
+            with open(filename, 'w', encoding='utf-8') as file:
+                file.writelines(group['Dialogue'] + '\n')
+
+    return
