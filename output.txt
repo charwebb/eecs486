@@ -1,12 +1,18 @@
 Prediction Method: bxx_bxx
-Accuracy: 0.13043478260869565
-Macro-averaged Precision: 0.058695652173913065
-Macro-averaged Recall: 0.5869565217391305
-F1 Macro Score: 0.10671936758893284
+Accuracy: 0.0
+Macro-averaged Precision: 0.1
+Macro-averaged Recall: 1.0
+F1 Macro Score: 0.18181818181818182
+
+Prediction Method: bert
+Accuracy: 0.5
+Macro-averaged Precision: 0.5
+Macro-averaged Recall: 0.5
+F1 Macro Score: 0.5
 
 Prediction Method: tfc_tfx
-Accuracy: 0.2608695652173913
-Macro-averaged Precision: 0.06521739130434785
-Macro-averaged Recall: 0.6521739130434783
-F1 Macro Score: 0.11857707509881427
+Accuracy: 0.5
+Macro-averaged Precision: 0.1
+Macro-averaged Recall: 1.0
+F1 Macro Score: 0.18181818181818182
 

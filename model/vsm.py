@@ -165,22 +165,25 @@ def vsm(tokens, test_tokens, docSchemas, querySchemas):
     invertedIndex = {}
 
     docCount = 0
+    count = 0
     for author, quotes in tokens.items():
         docCount += len(quotes)
         document = (author, quotes)
         invertedIndex = indexDocument(document, docSchemas, invertedIndex)
+
+    print("--- finished creating inverted index ---")
 
     # {author: retrieved documents}
     queriedDocuments = {}
 
     # {author: correct documents}
     # (correct documents is just the author because we want to retrieve THE author of the quote)
-    correctDocuments = {}
 
+    count = 0
     for author, quotes in test_tokens.items():
-        correctDocuments[author] = [author]
-        queryid = author
+        print(f"retrieving relevant documents. Done {count}", end='\r')
+        count += 1
         for quote in quotes:
-            queriedDocuments[queryid] = retrieveDocuments(quote, invertedIndex, docSchemas, querySchemas, docCount)
+            queriedDocuments[author] = retrieveDocuments(quote, invertedIndex, docSchemas, querySchemas, docCount)
 
     return queriedDocuments

@@ -2,6 +2,7 @@ import os
 import nltk
 from nltk.tokenize import word_tokenize
 from model.vsm import vsm
+from model.bert import bert
 import shutil
 
 def tokenize(quotes_dictionary):
@@ -37,24 +38,24 @@ def get_quotes(folder):
 def model():
     print("--- Making predictions! ---")
 
-    train_folder_path = 'TVShowQuotes-Train'
+    train_folder_path = 'TVShowQuotes-Train copy'
     # {author: [quote]}
     train_quotes_dictionary = get_quotes(train_folder_path)
     # {author: [[quote tokens]]}
     training_tokens_dictionary = tokenize(train_quotes_dictionary)
 
-    test_folder_path = 'TVShowQuotes-Test'
+    test_folder_path = 'TVShowQuotes-Test copy'
     test_quotes_dictionary = get_quotes(test_folder_path)
     testing_tokens_dictionary = tokenize(test_quotes_dictionary)
-
-    print()
-    print("doing vector space with tfc tfx")
-    tfc_tfx = vsm(training_tokens_dictionary, testing_tokens_dictionary, 'tfc', 'tfx')
 
     out_folder = "predictions"
     if os.path.exists(out_folder):
         shutil.rmtree(out_folder)
     os.makedirs(out_folder)
+
+    print()
+    print("doing vector space with tfc tfx")
+    tfc_tfx = vsm(training_tokens_dictionary, testing_tokens_dictionary, 'tfc', 'tfx')
 
     with open(os.path.join(out_folder, "tfc_tfx.txt"), 'w') as out_file:
         out_file.write(str(tfc_tfx))
@@ -65,5 +66,12 @@ def model():
 
     with open(os.path.join(out_folder, "bxx_bxx.txt"), 'w') as out_file:
         out_file.write(str(bxx_bxx))
+
+    print()
+    print("training bert model to make predictions")
+    bert_predictions = bert(train_quotes_dictionary, test_quotes_dictionary)
+
+    with open(os.path.join(out_folder, "bert.txt"), 'w') as out_file:
+        out_file.write(str(bert_predictions))
 
     return

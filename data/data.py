@@ -34,7 +34,7 @@ def seinfeldData():
     character_counts = df['Character'].value_counts().to_dict()
     character_counts = {k: v for k, v in character_counts.items() if k} # Removes all empties
     top_character_counts = {character: count for character, count in character_counts.items() if count > 35} # Only keeps top occurances
-    
+
     for character in top_character_counts:
             group = df[df['Character'] == character]
             dialogues = group["Dialogue"].tolist()

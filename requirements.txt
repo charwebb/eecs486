@@ -2,3 +2,8 @@ requests
 beautifulsoup4
 nltk
 pandas
+numpy
+tensorflow
+transformers
+tf-keras
+sklearn
