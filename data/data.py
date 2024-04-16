@@ -59,7 +59,11 @@ def seinfeldData():
 def southParkData():
     output_directory = 'TVShowQuotes'
     quotes_csv = 'southpark_quotes.csv'
-    os.makedirs(output_directory, exist_ok=True)
+        # Make training and testing directories
+    train_dir=output_directory + "-Train"
+    test_dir=output_directory + "-Test"
+    os.makedirs(train_dir, exist_ok=True)
+    os.makedirs(test_dir, exist_ok=True)
 
     df = pd.read_csv(quotes_csv)
     df['Character'] = df['Character'].apply(cleanCharacterColumn)
@@ -74,10 +78,22 @@ def southParkData():
 
     for character in top_character_counts:
         group = df[df['Character'] == character]
-        filename = os.path.join(output_directory, f"SouthPark_{character.upper()}.txt")
-        
-        with open(filename, 'w', encoding='utf-8') as file:
-            file.writelines(group['Line'])
+        lines = group["Line"].tolist()
+        random.shuffle(lines)
+
+        split_idx = int(len(lines) * 0.10)
+        test_lines = lines[:split_idx]
+        train_lines = lines[split_idx:]
+
+        # Filename for each character
+        test_filename = os.path.join(test_dir, "SouthPark_{}.txt".format(character.upper()))
+        train_filename = os.path.join(train_dir, "SouthPark_{}.txt".format(character.upper()))
+
+        with open(test_filename, 'w', encoding='utf-8') as file:
+            file.writelines(line + "\n" for line in test_lines)
+
+        with open(train_filename, 'w', encoding='utf-8') as file:
+            file.writelines(line + "\n" for line in train_lines)
     return
 
 def officeData():
