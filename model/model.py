@@ -2,6 +2,7 @@ import os
 import nltk
 from nltk.tokenize import word_tokenize
 from model.vsm import vsm
+import shutil
 
 def tokenize(quotes_dictionary):
     # Create a new dictionary to store tokenized quotes
@@ -48,10 +49,21 @@ def model():
 
     print()
     print("doing vector space with tfc tfx")
-    vsm(training_tokens_dictionary, testing_tokens_dictionary, 'tfc', 'tfx')
+    tfc_tfx = vsm(training_tokens_dictionary, testing_tokens_dictionary, 'tfc', 'tfx')
+
+    out_folder = "predictions"
+    if os.path.exists(out_folder):
+        shutil.rmtree(out_folder)
+    os.makedirs(out_folder)
+
+    with open(os.path.join(out_folder, "tfc_tfx.txt"), 'w') as out_file:
+        out_file.write(str(tfc_tfx))
 
     print()
     print("doing vector space with bxx bxx")
-    vsm(training_tokens_dictionary, testing_tokens_dictionary, 'bxx', 'bxx')
+    bxx_bxx = vsm(training_tokens_dictionary, testing_tokens_dictionary, 'bxx', 'bxx')
+
+    with open(os.path.join(out_folder, "bxx_bxx.txt"), 'w') as out_file:
+        out_file.write(str(bxx_bxx))
 
     return
