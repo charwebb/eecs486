@@ -17,10 +17,16 @@ def cleanCharacterColumn(name):
     name = re.sub(r'/.*|\(.*|&.*|\[.*', '', name)
     return name.strip().upper()
 
+
 def seinfeldData():
     output_directory = 'TVShowQuotes'
     quotes_csv = 'seinfeld_quotes.csv'
-    os.makedirs(output_directory, exist_ok=True)
+
+    # Make training and testing directories
+    train_dir=output_directory + "-Train"
+    test_dir=output_directory + "-Test"
+    os.makedirs(train_dir, exist_ok=True)
+    os.makedirs(test_dir, exist_ok=True)
 
     df = pd.read_csv(quotes_csv)
     df['Character'] = df['Character'].apply(cleanCharacterColumn)
@@ -31,11 +37,22 @@ def seinfeldData():
     
     for character in top_character_counts:
             group = df[df['Character'] == character]
-            # Filename for each character
-            filename = os.path.join(output_directory, f"Seinfeld_{character.upper()}.txt")
+            dialogues = group["Dialogue"].tolist()
 
-            with open(filename, 'w', encoding='utf-8') as file:
-                file.writelines(group['Dialogue'] + '\n')
+            random.shuffle(dialogues)
+            split_idx = int(len(dialogues) * 0.10)
+            test_dialogues = dialogues[:split_idx]
+            train_dialogues = dialogues[split_idx:]
+
+            # Filename for each character
+            test_filename = os.path.join(test_dir, "Seinfeld_{}.txt".format(character.upper()))
+            train_filename = os.path.join(train_dir, "Seinfeld_{}.txt".format(character.upper()))
+
+            with open(test_filename, 'w', encoding='utf-8') as file:
+                file.writelines(line + "\n" for line in test_dialogues)
+
+            with open(train_filename, 'w', encoding='utf-8') as file:
+                file.writelines(line + "\n" for line in train_dialogues)
 
     return
 
@@ -90,6 +107,7 @@ def officeData():
                 newfile = f"Office_{character.upper()}.txt"
                 with open(newfile, 'w') as output:
                     for quote in character_quotes[character]:
+                        
                         output.write(quote)
                         output.write("\n")
 

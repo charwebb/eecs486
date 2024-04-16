@@ -36,13 +36,13 @@ def get_quotes(folder):
 def model():
     print("--- Making predictions! ---")
 
-    train_folder_path = 'quotes'
+    train_folder_path = '../TVShowQuotes'
     # {author: [quote]}
     train_quotes_dictionary = get_quotes(train_folder_path)
     # {author: [[quote tokens]]}
     training_tokens_dictionary = tokenize(train_quotes_dictionary)
 
-    test_folder_path = 'test-quotes'
+    test_folder_path = '../TVShowQuotes'
     test_quotes_dictionary = get_quotes(test_folder_path)
     testing_tokens_dictionary = tokenize(test_quotes_dictionary)
 
