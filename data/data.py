@@ -17,10 +17,16 @@ def cleanCharacterColumn(name):
     name = re.sub(r'/.*|\(.*|&.*|\[.*', '', name)
     return name.strip().upper()
 
+
 def seinfeldData():
     output_directory = 'TVShowQuotes'
     quotes_csv = 'seinfeld_quotes.csv'
-    os.makedirs(output_directory, exist_ok=True)
+
+    # Make training and testing directories
+    train_dir=output_directory + "-Train"
+    test_dir=output_directory + "-Test"
+    os.makedirs(train_dir, exist_ok=True)
+    os.makedirs(test_dir, exist_ok=True)
 
     df = pd.read_csv(quotes_csv)
     df['Character'] = df['Character'].apply(cleanCharacterColumn)
@@ -31,18 +37,33 @@ def seinfeldData():
     
     for character in top_character_counts:
             group = df[df['Character'] == character]
-            # Filename for each character
-            filename = os.path.join(output_directory, f"Seinfeld_{character.upper()}.txt")
+            dialogues = group["Dialogue"].tolist()
 
-            with open(filename, 'w', encoding='utf-8') as file:
-                file.writelines(group['Dialogue'] + '\n')
+            random.shuffle(dialogues)
+            split_idx = int(len(dialogues) * 0.10)
+            test_dialogues = dialogues[:split_idx]
+            train_dialogues = dialogues[split_idx:]
+
+            # Filename for each character
+            test_filename = os.path.join(test_dir, "Seinfeld_{}.txt".format(character.upper()))
+            train_filename = os.path.join(train_dir, "Seinfeld_{}.txt".format(character.upper()))
+
+            with open(test_filename, 'w', encoding='utf-8') as file:
+                file.writelines(line + "\n" for line in test_dialogues)
+
+            with open(train_filename, 'w', encoding='utf-8') as file:
+                file.writelines(line + "\n" for line in train_dialogues)
 
     return
 
 def southParkData():
     output_directory = 'TVShowQuotes'
     quotes_csv = 'southpark_quotes.csv'
-    os.makedirs(output_directory, exist_ok=True)
+        # Make training and testing directories
+    train_dir=output_directory + "-Train"
+    test_dir=output_directory + "-Test"
+    os.makedirs(train_dir, exist_ok=True)
+    os.makedirs(test_dir, exist_ok=True)
 
     df = pd.read_csv(quotes_csv)
     df['Character'] = df['Character'].apply(cleanCharacterColumn)
@@ -57,14 +78,33 @@ def southParkData():
 
     for character in top_character_counts:
         group = df[df['Character'] == character]
-        filename = os.path.join(output_directory, f"SouthPark_{character.upper()}.txt")
-        
-        with open(filename, 'w', encoding='utf-8') as file:
-            file.writelines(group['Line'])
+        lines = group["Line"].tolist()
+        random.shuffle(lines)
+
+        split_idx = int(len(lines) * 0.10)
+        test_lines = lines[:split_idx]
+        train_lines = lines[split_idx:]
+
+        # Filename for each character
+        test_filename = os.path.join(test_dir, "SouthPark_{}.txt".format(character.upper()))
+        train_filename = os.path.join(train_dir, "SouthPark_{}.txt".format(character.upper()))
+
+        with open(test_filename, 'w', encoding='utf-8') as file:
+            file.writelines(line + "\n" for line in test_lines)
+
+        with open(train_filename, 'w', encoding='utf-8') as file:
+            file.writelines(line + "\n" for line in train_lines)
     return
 
 def officeData():
     quotes_csv = 'office_quotes.csv'
+    output_directory = 'TVShowQuotes'
+
+    # Make training and testing directories
+    train_dir=output_directory + "-Train"
+    test_dir=output_directory + "-Test"
+    os.makedirs(train_dir, exist_ok=True)
+    os.makedirs(test_dir, exist_ok=True)
     character_quotes = {}
 
     with open(quotes_csv, newline='') as file:
@@ -80,17 +120,23 @@ def officeData():
                 else:
                     character_quotes[char] = []
 
-        if(os.path.isdir("TVShowQuotes") == False):
-            os.makedirs("TVShowQuotes")
-        os.chdir("TVShowQuotes")
-
         for character in character_quotes:
+            quotes = character_quotes[character]
             # Only keeps top occurances
-            if(len(character_quotes[character]) > 35):
-                newfile = f"Office_{character.upper()}.txt"
-                with open(newfile, 'w') as output:
-                    for quote in character_quotes[character]:
-                        output.write(quote)
-                        output.write("\n")
+            if(len(quotes) > 35):
+                random.shuffle(quotes)
+                split_idx = int(len(quotes) * 0.10)
+                test_quotes = quotes[:split_idx]
+                train_quotes = quotes[split_idx:]
+                # Filename for each character
+                test_filename = os.path.join(test_dir, "TheOffice_{}.txt".format(character.upper()))
+                train_filename = os.path.join(train_dir, "TheOffice_{}.txt".format(character.upper()))
+
+                with open(test_filename, 'w', encoding='utf-8') as file:
+                    file.writelines(line + "\n" for line in test_quotes)
+
+                with open(train_filename, 'w', encoding='utf-8') as file:
+                    file.writelines(line + "\n" for line in train_quotes)
+
 
         return
