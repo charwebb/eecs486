@@ -25,7 +25,7 @@ def cleanCharacterColumn(name):
     return name.strip().upper()
 
 def seinfeldData():
-    output_directory = 'SeinfeldQuotes'
+    output_directory = 'TVShowQuotes'
     quotes_csv = 'seinfeld_quotes.csv'
     os.makedirs(output_directory, exist_ok=True)
 
@@ -39,16 +39,15 @@ def seinfeldData():
     for character in top_character_counts:
             group = df[df['Character'] == character]
             # Filename for each character
-            filename = os.path.join(output_directory, f"{character}.txt")
+            filename = os.path.join(output_directory, f"Seinfeld_{character.upper()}.txt")
 
-            # Write dialogues to the character's file
             with open(filename, 'w', encoding='utf-8') as file:
                 file.writelines(group['Dialogue'] + '\n')
 
     return
 
 def southParkData():
-    output_directory = 'SouthParkQuotes'
+    output_directory = 'TVShowQuotes'
     quotes_csv = 'southpark_quotes.csv'
     os.makedirs(output_directory, exist_ok=True)
 
@@ -63,7 +62,7 @@ def southParkData():
 
     for character in top_character_counts:
         group = df[df['Character'] == character]
-        filename = os.path.join(output_directory, f"{character}.txt")
+        filename = os.path.join(output_directory, f"SouthPark_{character.upper()}.txt")
         
         with open(filename, 'w', encoding='utf-8') as file:
             file.writelines(group['Line'])
@@ -86,13 +85,13 @@ def officeData():
                 else:
                     character_quotes[char] = []
 
-        if(os.path.isdir("OfficeQuotes") == False):
-            os.makedirs("OfficeQuotes")
-        os.chdir("OfficeQuotes")
+        if(os.path.isdir("TVShowQuotes") == False):
+            os.makedirs("TVShowQuotes")
+        os.chdir("TVShowQuotes")
 
         for character in character_quotes:
-            if(len(character_quotes[character]) > 45):
-                newfile = character + ".txt"
+            if(len(character_quotes[character]) > 35): # Only keeps top occurances
+                newfile = f"Office_{character.upper()}.txt"
                 with open(newfile, 'w') as output:
                     for quote in character_quotes[character]:
                         output.write(quote)
