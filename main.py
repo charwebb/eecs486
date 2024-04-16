@@ -13,10 +13,10 @@ def main():
         data()
 
     # Run predictions
-    model()
+    #model()
 
     # Evaluate
-    evaluate()
+    #evaluate()
 
     return
 
