@@ -94,10 +94,10 @@ def southParkData():
         train_filename = os.path.join(train_dir, "SouthPark_{}.txt".format(character.upper()))
 
         with open(test_filename, 'w', encoding='utf-8') as file:
-            file.writelines(line + "\n" for line in test_lines)
+            file.writelines(line for line in test_lines)
 
         with open(train_filename, 'w', encoding='utf-8') as file:
-            file.writelines(line + "\n" for line in train_lines)
+            file.writelines(line for line in train_lines)
     return
 
 def officeData():
