@@ -92,6 +92,7 @@ Vandelay!
 Let me be the architect! I can do it!
 Nice to meet you.
 Yeah, Art Vandelay.
+(turning to each other) I dont know. Hes an importer.
 ...And exporter.
 (clears his throat) Im, uh, Im an architect.
 Uh, railroads, uh...
@@ -166,6 +167,7 @@ Hi, Carol.
 Were really glad for you.
 Were aware of the proximity to the park, yes.
 Nice meeting you.
+Whats the rent?
 I had to say something. (chuckles) I had to say something. Everything was going so well. I had to say something.
 I told her I liked her. Why? Why did I tell her I like her? I have this sick compulsion to tell women how I feel. I like you I dont tell you.
 Im outta the picture. I am outta the picture. (laughs) Its only a matter of time now.
@@ -295,6 +297,7 @@ I dont know. Theyre books.
 Theyre my books.
 Jerry, its not my fault.
 It's standard. Has she left you one of those messages where she uses up the whole machine?
+I dunno sometimes...
 What trying to get off the phone?
 Just do it like a Band-Aid. One motion. Right off! (beat) She is sexy though. Dont you think?
 Yeah.
@@ -454,6 +457,7 @@ How Do You Solve A Problem Like Maria?
 Oh, its a lovely song. (singing) How do you solve a problem like Maria?...
 You pick it.
 Peter, Paul and Mary.
+(singing) Lemon tree, very pretty and a lemon flower...
 Alright ok. You got the tape?
 How do you feel? Confident?
 You nervous?
@@ -543,6 +547,7 @@ Forget it? I already called my parents. I told them to expect the surprise of a 
 Who is this Rava?
 Let me just call him.
 Oh, he stole it!
+No.
 I thought you said one oclock.
 Remember, dont take any crap.
 Ill be right here.
@@ -1701,6 +1706,7 @@ Yeah, well....
 Hey, what's another million, give or take. I get off where and when I wanna get off.
 I'm stuck. Pull a little, just a second. Don't start the train! Don't start the train!!
 Are you often on business trip? Nice...oh, hey nice ice-bucket.
+Make myself comfortable. What does that mean? Does she want me to take my clothes off? Is she taking her clothes off? What if I take my clothes off and she still has hers' on? Then I really look like an idiot. She could get offended and leave. So maybe I should leave them on, but what then if she takes her off? Then she'll feel humiliated. 'Make yourself comfortable'. I got this unbelievable woman and this 'comfortable'-thing can ruin me. I got it! I take my shoes off and sit on the bed. There, that's comfortable. She can't accuse me being unconvertible.
 Gotta tell you I'm pretty comfortable.
 Eh, gee, I hope you have the key for these things.
 You know, my mother used to walk around on our apartment just in her bra and panties. She didn't look anything like you, she was really disgusting, really bad body. If you could imagine uglier and fatter version of Shirley Booth. Remember Shirley Booth from Hazel. Really embarrassing, cause you know I had only mother in the whole neighborhood who was worse looking than Hazel. Imagine the taunts I would hear.
@@ -2063,6 +2069,7 @@ We are going to the Knick game! Michael Jordan!
 Did I tell you?! Did I tell you?!
 You see, you see? I see things as they are and I say, 'no!' Uh, wait, you see things as they are not and you s- Wait, uh, you see things, do you see things as they are? What do you say when you see things?
 If I see things as they are, I would ask 'why' or 'why not?'
+He knows?
 Where are we going? Why are we pulling off here?
 We're on the Grand Central, there's no traffic.
 Right. The other members of our party. (closes partition) Other members of our party? What other members of our party? I didn't even know we were in a party. Oh, I'm telling you, the jig is up.
@@ -2501,6 +2508,7 @@ Hey, can I flip on the siren?
 I'm just asking, all they have to do is say no.
 Wohoo, check it out.
 You know what I never understood? Why did they change the siren noise? When I was a kid it was always "waaaa, waaaa", you know now it "woo-woo-woo-woo-woo". Why did they do that, did they do some research? Did they find that woo-woo was more effective than waa?
+Eee-aaa-eee-aaa-eee-aaa...
 You could eat of that shotgun.
 My favorite.
 Makes the 11 gauge look like a cap pistol.
@@ -2634,7 +2642,7 @@ Hello, oh, hello. You remember, ... Susan, from N B C.
 And this is Kramer.
 All right go ahead Susan, tell him.
 Well, go ahead, tell him.
-and SUSAN The third?
+The third?
 I never should have brought her up there. Should have known better. Should have seen it coming. I didn't see it coming.
 You know she was behind the idea. She was going to champion the show. That's what I was bring her up there to tell you. And she liked me.
 What, are you crazy? It's a traumatic thing to be thrown up on.
@@ -2818,8 +2826,10 @@ Well, I didn't think anyone would play it.
 What do you mean not goin'? Come on, we got plans here. Call her up.
 Wh-Well maybe you should ask Elaine.
 Oh no no no no, don't say anything to Kramer. Susan can't stand him. He vomited all over her.
+uh uh, we're uh ..
 Gee, that's-that's too bad.
 Well, cause we were just saying we were going to ask you to come up to the country with us this weekend. Susan's father has a cabin up there. But, eh, all right, well.
+No, no, no, no, no, no, no.
 No, no that's ah, that's pie country.
 Yeah, they eh, they do a lot of baking up there.
 Blackberry, Boysenberry ...
@@ -2949,6 +2959,7 @@ Hi, how are ya? (They kiss)
 Ohh, hey there, young fella. (They shake hands) What's your major?
 Well, you should always consider podiatry. (Patting Ricky on the shoulder) There's nothing wrong with the feet. (Ricky looks critically back at George)
 Oh, sure. (Holds the box out as Susan takes out a few letters)
+Oh, wow.
 Well, we.. we, we, ah..
 We really should be, uh, heading out..
 You know, the time..
@@ -3097,6 +3108,7 @@ You don't think I can?
 (Daring) You think you could?
 Care to make it interesting?
 A hundred dollars.
+(Rejecting) Ohh, no. No, no, no..
 Alright, look, you want to be in?
 You gotta give us odds. At least two to one - you gotta put up two-hundred dollars.
 Alright, you're in for one-fifty.
@@ -3111,6 +3123,7 @@ Any, uh.. progress, there? What's the latest?
 (Suggesting) Maybe she's a nudist. You know, those nudist colony people..
 I would imagine it's all naked.
 (Still focused on the nudist) They're naked, the gardeners naked.. the bellhops. (Jerry makes a noise of astonishment) One big nude-a-rama.
+(Only turning back for a second) Hey.
 (Also, over his shoulder) Not me.
 Have a good time.
 You're out?!
@@ -3145,6 +3158,7 @@ Me too. I've been yelling at strangers on the street.
 (Shocked) You caved?!
 You're out?
 I figured you'd cruise. At least through the Spring.
+Ohhhhh.. John-John.
 And then, (Smacks the money) there were two.
 (To Elaine) Hey, what happened?
 I thought you were meeting Kennedy.
@@ -3369,6 +3383,7 @@ So, you send me to this therapist to help me with my emotional disorders, and sh
 Oh, she didn't think it was funny. What is she, Rowan & Martin? We're supposed to meet with NBC tomorrow! She completely shattered my confidence. And I'm paying for this, she's my employee!
 And she slaves to earn every penny. So that someday, I might be able to walk up to a woman and say, "Yes, I'm bald, but I'm still a good person."
 No they don't. I tried that once. I snubbed for a year. Nothing. Every woman I saw, I snubbed. You never saw people so pleased. (Elaine returns from the bathroom.)
+Hi.
 My cousin worked for Bouchard's. They used to use the bouilla-base for a toilet. (Jerry and Russell are shocked.)
 Well, you didn't hear it from me, but needless to say, if you go in there - stick with the consumee.
 Aw, that's a fun age. (Jerry looks at George distastefully.)
@@ -3691,6 +3706,7 @@ Look, we're not gonna be that long anyway... we have to get to the "party"!
 He's right! It's the same thing with the femenists. You know, they want everything to be equal, everything! But when the check comes, where are they?
 Yeah! Alright, I'm pulling in.
 Oh, come on, it's five minutes.
+Don't worry. We won't forget!
 What did I get the veggie burger for? You got a veggie burger, so I had to get the veggie burger, I'm allover crums...
 How are we gonna get out of here? They'll kill us!
 Screw the Drake!
@@ -3734,6 +3750,7 @@ Parking in a handicap spot. Right in the middle of his United Volunteers meeting
 Between the car getting totalled, the towing charge and the fine, there's no way I can ever pay him back...
 I agreed to become his butler.
 The woman we bought the wheelchair for?
+(hesitatingly) ... no...
 ...you're very attractive...
 Boy, even I never heard that one...
 Well, we just blew 240 bucks on a wheelchair.
@@ -4084,6 +4101,7 @@ A pig-man?
 (knocks on the window) Hey, why are all those people milling around my car?
 Hey, there's a guy up the roof.
 Oh well, I hope he doesn't jum...
+Oh my!
 My car! My caaaaarrrr!
 Well I just got the estimate. It's going to cost more to fix that roof than the car's worth, So I'm going over to see that hospital administrator today. Someone is gonna pay for this damage and it's not gonna be me.
 I know, swan dives from twenty floors up, lands right on top. What do I got a bulls eye up there? He couldn't move over two feet? Land on the sidewalk. It's city property.
@@ -5485,6 +5503,7 @@ Your boyfriend reads the Daily Worker? What is he? A communist?
 Maybe he's just "very well RED"?
 Well, does he wear bland, drab, olive colored clothing?
 Huh, he's a communist. . . . Look at this. "Exciting uninhibited woman seeks forward thinking comrade and appearance not important." . . . Appearance Not Important! This is unbelievable. Finally this is an ideology I can embrace.
+Hey.
 I can't believe you're really going out with a woman named Lois.
 Duncan Meyers?
 I looked up. I couldn't believe it.
@@ -6304,6 +6323,7 @@ Yeah! Boy, she is something, isn't she?
 Nope. I wept like a baby.
 Well, I started to tell her and then all of the sudden, for some reason, I just burst into tears.
 I bawled uncontrollably. I just poured my guts out. And I'll tell you, Jerry, it was incredible. I never realized how powerful these tears are. I could have postponed it another five years if I wanted to.
+Hey!
 Wait. Whoa! That's the Rabbi from Elaine's building. I just met this guy the other day.
 And then I hear this rabbi on television, I mean imagine.
 Ya know, I was just a little surprised.
@@ -8610,6 +8630,7 @@ I dont understand.
 Clearer
 Why not? Pay is good. I got dental, private access to one of the great handicapped toilets in the city.
 Theyre the ones who should be ashamed. They signed me to a one-year contract. As long as I show up for work every day, they have to pay me.
+(doing the voice) Hello-o-o-o!
 Hello-o-o-o Elaine!
 (doing the voice) Not at all.
 Thats beautiful.
@@ -8647,6 +8668,7 @@ Well, Play Now has all kinds of different rubber balls. Why dont we test your bl
 Oh, yes I am. Mr. Thomassoulo likes to play dirty. Well, theres nothing dirtier than a giant ball of oil.
 (again from bathroom) Witness.
 Oh, you might want to stick around Jerry. Mr. Thomassoulo picked the wrong man to hire because he was fake handicapped.
+No. No
 Hey, use mine. Ill let you in.
 I uh, took care of that.
 I insist. Ill fix us a drink. (phone rings  who would that be?) I got it.
@@ -8843,6 +8865,7 @@ Yeah. yeah. I-I know.
 So they're flying the tiny instruments in from El Paso.
 Oh, come on! You gotta get me over there!
 More wine and turkey? (Pours Celia more wine)
+Tryptophan.* (*footnote - see end of script)
 Oh.
 Four hours.
 (playing with toys) Ahhhh, Yes! Touch down! Your turn, Jerry. (hands Jerry the Mattel Football. George starts playing with the Etch-a-sketch.)
@@ -8868,6 +8891,7 @@ So go ahead pigeons. hu hu hu. Laugh it up. I'm getting in my car now and the la
 Does that mean I have to go too?
 Hey, shut up.
 And on your dates.
+Elaine, Elaine, Elaine, Elaine...(distant alarm sound which is getting louder.)
 Well, at the Yankees it was all about smoothing things over, you know, chiseling away, grinding down. In fact we used to call it 'the grind'.
 That should be 14, let me just...(corrects it with a pen.)
 You won't regret this, sir.
@@ -9383,6 +9407,8 @@ Well, you know, I've been lyin' about my income for a few years. I figured I cou
 How are they gonna make that book into a movie?
 Yeah?
 Oh.
+Ooh!
+Aww.
 (to a street vender selling hot dogs) You must hate hot dogs, huh? Or else, you, uh, you really like 'em and that's why you, you do this.
 I'll tell ya, if I had one of these things, I'd be eatin' hot dogs all the time.
 Mmm... no.
@@ -9432,6 +9458,7 @@ Tell you how you could check.
 Reprogram all the buttons, see if he changes them back. You know? The old switcheroo.
 No, it's doing the same thing to someone that they did to you.
 Well that's the gist of it!
+Nah.
 By the way, how did Puddy get back in the picture?
 Alright, well why don't we smooth the head down to nothing, stick a pumpkin under its arm and change the nameplate to Ichabod Crane?
 (getting up and leaving) Alright! That's it for me. Goodnight everybody.

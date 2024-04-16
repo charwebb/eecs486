@@ -279,6 +279,7 @@ Go ahead, drink it, George.
 What's a Chuckle?
 Well, can you call him an ambulance?
 hey, watch the road! Watch the road, man!
+Watch out!
 Hey.
 Got the paper?
 No paper?
@@ -670,6 +671,7 @@ What's an extremity?
 You raise the head, you get blood to the feet.
 What about a big sponge?
 Use a belt.
+(at the same time) Yes, yes.
 Yeah, I've seen them do that.
 Maybe that's what he's got.
 Well he could have dropped acid when you weren't looking.
@@ -1509,6 +1511,7 @@ If anything, we'll probably get there early. I'll have a chance to go to the Dut
 Duty.
 No, I dunno how much duty is.
 I still like to stop at the duty free shop.
+I like to stop at the duty free shop!
 How does it look on your side? [Pause while George just stares at him] We'll get there...
 Look at you! You run like a girl! Run like a man! Lift your knees!
 No, there it is, right there-- 133... and it's canceled.
@@ -1776,6 +1779,7 @@ Hey. This wallpaper is *very* good. My place looks like a ski lodge!
 Well, I didn't believe you.
 Well who's gonna turn down a Junior Mint? It's chocolate, it's peppermint-- it's *delicious*!
 It's very refreshing!
+Oh, my God...
 Really?
 We could be tried for murder...
 You're not gonna say anything, you got that?
@@ -1840,6 +1844,7 @@ But this'll get you around?
 Now what's that?
 Well, is it alright if I try it?
 Oh yeah!
+We'll take it!
 Well, I gave her the wheelchair! You should have seen the look on her face. And then she told me, that the old wheelchair, that wasn't any good anyway! So you see George, the whole incident was a God blessing! Yeah!
 Yeah....
 It's over!
@@ -2091,6 +2096,7 @@ Ya well, so was uh sacrificing virgins to appease the gods, but we don't do that
 I don't know.
 They're all looking up.
 Whoa. That's the guy that I told where the elevator was.
+Oh my!
 YEA!
 Don't even question my instincts, because my instincts are honed. (REPAPER) Look at that.
 Look look.
@@ -2128,8 +2134,10 @@ Hey, hey, it's George.
 And you're saying she's deaf.
 Can't hear a thing.
 And you're going to go out with her.
+Hey.
 Hey I know how to sign.
 Yeah when I was 8, I had a deaf cousin who lived with us for about a year. (signing as he speaks) So I haven't been able to do it in a while.
+No.
 Yeah yeah Pete, he can get you great tickets to something.
 Like a rock concert. Whatever you like.
 You got it. Hey Jerry, do me a favor. The next time you see that lineswoman ask her how those ball boys get those jobs. I would love to be able to do that.
@@ -2379,8 +2387,11 @@ you gotta relax.. try the yodel (chanting) yodel lay hee hoo
 yeah!
 alright.. George you got it? (gives him the rope)
 what?
+ahh.....!!
 alright, who's gonna tell her
 it was your fault
+hey
+yeah
 for a little while
 uh..
 whoa whoa ginga, you were supposed to tie the knot
@@ -3768,6 +3779,7 @@ Nothing Nothing.
 I don't have anything. Ask him.
 What?!
 Ow
+Hey!
 Sorry? Are you kidding? You did me the biggest favor of my life. I spoke to a lawyer, we're suing for millions.
 The coffee was too hot.
 Not THAT hot.
@@ -4237,6 +4249,7 @@ Ohhhh, what's this?
 Oh I see....Yessss. Little Miss Candy Bar paid a visit, didn't she?
 Ah, Ah, Ahhhhh! I know what I think. I think you're gaga over this dame. She's twisted you around her little finger, and now, you're willing to sell me, and Elaine, and whoever else you have to, right down the river.
 You're just out for sex!!
+Ah, Ah, Ahhhhh!!!!!!
 Three under par.
 Well if they're lucky.
 Yeah, yeah...What's your read, Stan?
@@ -4336,6 +4349,7 @@ Oh, you don't wanna get on my bad side.
 Quiet, quiet.
 I'm loving this.
 Yeah, yeah. I know, I know.
+Giddyup.
 Y'hello.
 Hmm. Well, I haven't had any trouble.
 (playing along) Ohh, is that right? Well, I have been having a little trouble with my call-waiting.
@@ -4557,6 +4571,7 @@ No, it doesn't work.
 Yeah, you overload your inventory and you blow your margins on gasoline. Trust me, it doesn't work.
 No, no, I'm off that.
 Oh yeah. Every which way. Couldn't crunch the numbers. It drove me crazy.
+(simultaneous) No problem. You bet.
 No, an eighteen-wheeler's no good. Too much overhead. You got permits, weigh-stations, tolls... Look, you're way outta your league.
 Newman, it's a dead-end, c'mon. (Jerry enters) Hey, there he is.
 (to Newman) Aw, that's right, we forgot about those.
@@ -4740,6 +4755,7 @@ He almost beat me.
 We're all at the same skill level, Jerry.
 I got carpool. (exits)
 Thanks for the juice box, Mrs. Z.
+Yay!
 Yes, Sansei.
 Oh, hey.
 Oh, well, I-I-I'm dominating.
@@ -4903,6 +4919,7 @@ Yeah. He went down at the Beackman, he tried to lam, but they cheesed him.
 Well, I ah, gotta give him something. Come on, where's that tape I shot?
 Jerry, she taped over the whole ending! (Brody enters)
 Uh, yeah, yeah. Here it is, Brody. One copy of Cry Cry Again.
+Uh... great.
 Although the whole story kinda comes apart at the end there.
 Yeah, it's a disturbing image.
 Well, I really miss the Bermuda Triangle.
@@ -5931,6 +5948,8 @@ Shees, come on...(opens the radiator)..this thing is bone dry. (Looks at the blo
 That kid...
 Jerry, it was overheating. You should take better care of that thing.
 You didn't get the blood from me.
+Aaaahhh...!!!
+Aaaaahhh...!!!
 (enters) Well... I've had it with these jackbooted thugs!
 I got three 'Pottery Barn' catalogs in one day. That makes eight this month.
 Oh, no. I've been saving them up here in your apartment. And now, it's payback time. 'Pottery Barn' is in for a world of hurt.
@@ -6042,7 +6061,9 @@ Okay. A little later, we're gonna be talking with animal expert, Jim Fowler.
 But first, we're talking with, Jerry. (looks down to his yellow note cards) Okay, Jerry, uh, you uh, you drugged a woman in order to play with her toy, collection. How do you feel about that?
 And she doesn't know anything, about this?
 Well, Jerry, we have a little surprise for you! Come on out, Celia!
+Woah.
 It's the new format. Scandals and Animals. Git gt gt.
+Ohhh!
 George I told you we're booked!
 Ohhh. another interesting confrontation. This could be spicy. Yeah, George bring him over.
 (off camera) Are we getting this?
@@ -6050,6 +6071,7 @@ Well, the squirrel kept scurrying and the hawk kept clawing.
 Ill tell ya it was a grind having to fill 10 hours a day. I'm not sure I was ready to have my own talk show set.
 You'll get used to it. It's like a grubby scrub.
 And to the bathroom.
+Elaine, Elaine, Elaine, Elaine...(distant alarm sound which is getting louder.)
 Kruger? That's not Kruger Industrial Smoothing, is it?
 Grinders, sanders, wet stones. They are the ones who botched the Statue of Liberty job.
 You now what you do? You sneak that photo out of there for couple of days and get it air brushed.
@@ -6162,6 +6184,7 @@ Well, Newman, I need your wish to protect me from FDR.
 Come on! Look, I'll give you my next birthday wish, huh?
 Forty-eight.
 Done!
+(Together) Sucker..
 Oh, geez..
 (Walking away) I knew it.. Stupid Jerry..
 But you haven't seen..
