@@ -6,4 +6,4 @@ numpy
 tensorflow
 transformers
 tf-keras
-sklearn
+scikit-learn

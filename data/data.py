@@ -31,6 +31,8 @@ def seinfeldData():
     df = pd.read_csv(quotes_csv)
     df['Character'] = df['Character'].apply(cleanCharacterColumn)
     df['Dialogue'] = df['Dialogue'].astype(str)
+    df = df[df['Dialogue'].apply(lambda x: len(x.split()) > 7)] # Only gets lines with 7+ words
+
     character_counts = df['Character'].value_counts().to_dict()
     character_counts = {k: v for k, v in character_counts.items() if k} # Removes all empties
     top_character_counts = {character: count for character, count in character_counts.items() if count > 35} # Only keeps top occurances
@@ -38,6 +40,7 @@ def seinfeldData():
     for character in top_character_counts:
             group = df[df['Character'] == character]
             dialogues = group["Dialogue"].tolist()
+            #print(dialogues)
 
             random.shuffle(dialogues)
             split_idx = int(len(dialogues) * 0.10)
@@ -68,6 +71,7 @@ def southParkData():
     df = pd.read_csv(quotes_csv)
     df['Character'] = df['Character'].apply(cleanCharacterColumn)
     df['Line'] = df['Line'].astype(str)
+    df = df[df['Line'].apply(lambda x: len(x.split()) > 7)] # Only gets lines with 7+ words
     character_counts = df['Character'].value_counts().to_dict()
 
     # Removes all empties
@@ -113,12 +117,13 @@ def officeData():
             character = row['speaker']
             script = row['line_text']
 
-            charList = character.split("/")
-            for char in charList:
-                if char in character_quotes:
-                    character_quotes[char].append(script)
-                else:
-                    character_quotes[char] = []
+            if len(script.split()) > 7:
+                charList = character.split("/")
+                for char in charList:
+                    if char in character_quotes:
+                        character_quotes[char].append(script)
+                    else:
+                        character_quotes[char] = [script]
 
         for character in character_quotes:
             quotes = character_quotes[character]
