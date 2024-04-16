@@ -82,6 +82,13 @@ def southParkData():
 
 def officeData():
     quotes_csv = 'office_quotes.csv'
+    output_directory = 'TVShowQuotes'
+
+    # Make training and testing directories
+    train_dir=output_directory + "-Train"
+    test_dir=output_directory + "-Test"
+    os.makedirs(train_dir, exist_ok=True)
+    os.makedirs(test_dir, exist_ok=True)
     character_quotes = {}
 
     with open(quotes_csv, newline='') as file:
@@ -97,18 +104,23 @@ def officeData():
                 else:
                     character_quotes[char] = []
 
-        if(os.path.isdir("TVShowQuotes") == False):
-            os.makedirs("TVShowQuotes")
-        os.chdir("TVShowQuotes")
-
         for character in character_quotes:
+            quotes = character_quotes[character]
             # Only keeps top occurances
-            if(len(character_quotes[character]) > 35):
-                newfile = f"Office_{character.upper()}.txt"
-                with open(newfile, 'w') as output:
-                    for quote in character_quotes[character]:
-                        
-                        output.write(quote)
-                        output.write("\n")
+            if(len(quotes) > 35):
+                random.shuffle(quotes)
+                split_idx = int(len(quotes) * 0.10)
+                test_quotes = quotes[:split_idx]
+                train_quotes = quotes[split_idx:]
+                # Filename for each character
+                test_filename = os.path.join(test_dir, "TheOffice_{}.txt".format(character.upper()))
+                train_filename = os.path.join(train_dir, "TheOffice_{}.txt".format(character.upper()))
+
+                with open(test_filename, 'w', encoding='utf-8') as file:
+                    file.writelines(line + "\n" for line in test_quotes)
+
+                with open(train_filename, 'w', encoding='utf-8') as file:
+                    file.writelines(line + "\n" for line in train_quotes)
+
 
         return
