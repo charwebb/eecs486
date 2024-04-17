@@ -8,9 +8,20 @@ import re
 import csv, sys
 
 def data():
-    seinfeldData()
-    southParkData()
-    officeData()
+    num_quotes = 100
+    output_directory = 'TVShowQuotes'
+
+    # make output directories
+    if os.path.exists(output_directory + "-Train"):
+        shutil.rmtree(output_directory+ "-Train")
+    if os.path.exists(output_directory + "-Test"):
+        shutil.rmtree(output_directory + "-Test")
+    os.makedirs(output_directory + "-Train")
+    os.makedirs(output_directory + "-Test")
+
+    seinfeldData(num_quotes, output_directory)
+    # southParkData(num_quotes, output_directory)
+    # officeData(num_quotes, output_directory)
     return
 
 def cleanCharacterColumn(name):
@@ -18,8 +29,7 @@ def cleanCharacterColumn(name):
     return name.strip().upper()
 
 
-def seinfeldData():
-    output_directory = 'TVShowQuotes'
+def seinfeldData(num_quotes, output_directory):
     quotes_csv = 'seinfeld_quotes.csv'
 
     # Make training and testing directories
@@ -35,7 +45,7 @@ def seinfeldData():
 
     character_counts = df['Character'].value_counts().to_dict()
     character_counts = {k: v for k, v in character_counts.items() if k} # Removes all empties
-    top_character_counts = {character: count for character, count in character_counts.items() if count > 35} # Only keeps top occurances
+    top_character_counts = {character: count for character, count in character_counts.items() if count > num_quotes} # Only keeps top occurances
 
     for character in top_character_counts:
             group = df[df['Character'] == character]
@@ -59,8 +69,7 @@ def seinfeldData():
 
     return
 
-def southParkData():
-    output_directory = 'TVShowQuotes'
+def southParkData(num_quotes, output_directory):
     quotes_csv = 'southpark_quotes.csv'
         # Make training and testing directories
     train_dir=output_directory + "-Train"
@@ -78,7 +87,7 @@ def southParkData():
     character_counts = {k: v for k, v in character_counts.items() if k}
 
     # Only keeps top occurances
-    top_character_counts = {character: count for character, count in character_counts.items() if count > 35}
+    top_character_counts = {character: count for character, count in character_counts.items() if count > num_quotes}
 
     for character in top_character_counts:
         group = df[df['Character'] == character]
@@ -100,9 +109,8 @@ def southParkData():
             file.writelines(line for line in train_lines)
     return
 
-def officeData():
+def officeData(num_quotes, output_directory):
     quotes_csv = 'office_quotes.csv'
-    output_directory = 'TVShowQuotes'
 
     # Make training and testing directories
     train_dir=output_directory + "-Train"
@@ -128,7 +136,7 @@ def officeData():
         for character in character_quotes:
             quotes = character_quotes[character]
             # Only keeps top occurances
-            if(len(quotes) > 35):
+            if(len(quotes) > num_quotes):
                 random.shuffle(quotes)
                 split_idx = int(len(quotes) * 0.10)
                 test_quotes = quotes[:split_idx]
