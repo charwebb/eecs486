@@ -98,8 +98,8 @@ def evaluate():
 
     # Write results to output file
     with open(output_file, 'w') as outfile:
-        for method_name, results in results_by_method.items():
+        for method_name, results in sorted(results_by_method.items()):
             outfile.write(f"Prediction Method: {method_name}\n")
             for metric, value in results.items():
-                outfile.write(f"{metric}: {value}\n")
+                outfile.write(f"{metric}: {value:.4f}\n")
             outfile.write("\n")

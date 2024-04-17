@@ -8,7 +8,10 @@ import re
 import csv, sys
 
 def data():
-    num_quotes = 100
+    # 525 quotes = 20 people
+    # 63 quotes = 100 people
+    # 10 quotes = 612 people
+    num_quotes = 10
     output_directory = 'TVShowQuotes'
 
     # make output directories
@@ -20,8 +23,8 @@ def data():
     os.makedirs(output_directory + "-Test")
 
     seinfeldData(num_quotes, output_directory)
-    # southParkData(num_quotes, output_directory)
-    # officeData(num_quotes, output_directory)
+    southParkData(num_quotes, output_directory)
+    officeData(num_quotes, output_directory)
     return
 
 def cleanCharacterColumn(name):
