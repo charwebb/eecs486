@@ -1,18 +1,48 @@
+Prediction Method: bfx_bfx
+Accuracy: 0.0
+Macro-averaged Precision: 0.09999999999999999
+Macro-averaged Recall: 1.0
+F1 Macro Score: 0.1818181818181818
+
+Prediction Method: tfx_tfx
+Accuracy: 0.09090909090909091
+Macro-averaged Precision: 0.0909090909090909
+Macro-averaged Recall: 0.9090909090909091
+F1 Macro Score: 0.16528925619834708
+
 Prediction Method: bxx_bxx
 Accuracy: 0.0
-Macro-averaged Precision: 0.1
+Macro-averaged Precision: 0.09999999999999999
 Macro-averaged Recall: 1.0
-F1 Macro Score: 0.18181818181818182
+F1 Macro Score: 0.1818181818181818
 
-Prediction Method: bert
-Accuracy: 0.5
-Macro-averaged Precision: 0.5
-Macro-averaged Recall: 0.5
-F1 Macro Score: 0.5
+Prediction Method: txc_txx
+Accuracy: 0.18181818181818182
+Macro-averaged Precision: 0.0909090909090909
+Macro-averaged Recall: 0.9090909090909091
+F1 Macro Score: 0.16528925619834708
+
+Prediction Method: txc_nfx
+Accuracy: 0.18181818181818182
+Macro-averaged Precision: 0.09999999999999999
+Macro-averaged Recall: 1.0
+F1 Macro Score: 0.1818181818181818
+
+Prediction Method: nxx_bpx
+Accuracy: 0.09090909090909091
+Macro-averaged Precision: 0.0909090909090909
+Macro-averaged Recall: 0.9090909090909091
+F1 Macro Score: 0.16528925619834708
 
 Prediction Method: tfc_tfx
-Accuracy: 0.5
-Macro-averaged Precision: 0.1
+Accuracy: 0.18181818181818182
+Macro-averaged Precision: 0.0909090909090909
+Macro-averaged Recall: 0.9090909090909091
+F1 Macro Score: 0.16528925619834708
+
+Prediction Method: bxx_bpx
+Accuracy: 0.0
+Macro-averaged Precision: 0.09999999999999999
 Macro-averaged Recall: 1.0
-F1 Macro Score: 0.18181818181818182
+F1 Macro Score: 0.1818181818181818
 

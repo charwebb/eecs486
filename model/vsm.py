@@ -23,7 +23,7 @@ def indexDocument(document, docSchema, invertedIndex):
 
             # document term frequency
             # tf
-            if docSchema[0] == 't':
+            if docSchema[0] == 't' or docSchema[0] == 'n':
                 entry[1][author] = entry[1].get(author, 0) + 1
             # 1
             elif docSchema[0] == 'b':
@@ -46,6 +46,8 @@ def getDocVectorLengths(invertedIndex, numDocuments, docScheme):
         # 1
         elif docScheme[1] == 'x':
             idf = 1
+        elif docScheme[1] == 'p':
+            idf = log((numDocuments - float(df))/float(df))
         tokens = invertedIndex[term][1]
         for token in tokens:
             docid = token
@@ -68,8 +70,17 @@ def cosineSimilarity(querytfidf, documenttfidf, queryNorm, documentNorm):
         return 0
     return product / (queryNorm * documentNorm)
 
+def normalize_term_frequency_query(queryFrequencies):
+    max_tf = max(queryFrequencies.values())
+
+    for term, tf in queryFrequencies.items():
+        normalized_tf = 0.5 + 0.5 * (tf / max_tf)
+        queryFrequencies[term] = normalized_tf
+
+    return queryFrequencies
+
 # Added parameter docCount = N, since I already iterate through each document in main
-def retrieveDocuments(query, invertedIndex, docScheme, queryScheme, docCount):
+def retrieveDocuments(query, invertedIndex, docScheme, queryScheme, docCount, cosineSimNormDocVectorLengths):
 
     # get relevant documents and store as as set.
     relevantDocuments = set()
@@ -78,11 +89,15 @@ def retrieveDocuments(query, invertedIndex, docScheme, queryScheme, docCount):
 
         # query term frequency
         # tf
-        if queryScheme[0] == 't':
+        if queryScheme[0] == 't' or queryScheme[0] == 'n':
             queryFrequencies[word] = queryFrequencies.get(word, 0) + 1
         # 1
         elif queryScheme[0] == 'b':
             queryFrequencies[word] = queryFrequencies.get(word, 1)
+
+    # Do an extra loop to normalize the term frequencies of the query.
+    if queryScheme[0] == 'n':
+        normalize_term_frequency_query(queryFrequencies)
 
     for word in queryFrequencies:
         if invertedIndex.get(word):
@@ -101,19 +116,21 @@ def retrieveDocuments(query, invertedIndex, docScheme, queryScheme, docCount):
             # 1
             elif queryScheme[1] == 'x':
                 idf = 1
+            elif queryScheme[1] == 'p':
+                idf = log((docCount - float(df))/float(df))
 
             queryVector[term] = frequency * idf
 
     # get the length of all document vectors and the length of the query vector
     if docScheme[2] == 'c':
-        docLengths = getDocVectorLengths(invertedIndex, docCount, docScheme)
+        docLengths = cosineSimNormDocVectorLengths
 
     # query cosine similarity normalization
     # 1
     if queryScheme[2] == 'x':
         queryLength = 1
     # c: length of vector
-    else:
+    elif queryScheme[2] == 'c':
         queryLength = getQueryVectorLength(queryVector)
 
     # get similaritiy scores using cosing similarity
@@ -136,7 +153,7 @@ def retrieveDocuments(query, invertedIndex, docScheme, queryScheme, docCount):
                     if docScheme[2] == 'x':
                         documentNormalization = 1
                     # c: length of vector
-                    else:
+                    elif docScheme[2] == 'c':
                         documentNormalization = docLengths[docid]
 
                     similarity = cosineSimilarity(querytfidf, doctfidf, queryLength, documentNormalization)
@@ -156,6 +173,16 @@ def retrieveDocuments(query, invertedIndex, docScheme, queryScheme, docCount):
     topScores = sortedScores[:length]
     return topScores
 
+def normalize_term_frequency(inverted_index):
+    max_tf = max(term_info[0] for term_info in inverted_index.values())
+
+    for term, term_info in inverted_index.items():
+        tf = term_info[0]
+        normalized_tf = 0.5 + 0.5 * (tf / max_tf)
+        inverted_index[term][0] = normalized_tf
+
+    return inverted_index
+
 
 def vsm(tokens, test_tokens, docSchemas, querySchemas):
     # run with python3 vectorspace.py tfc tfx cranfieldDocs/ cranfield.queries
@@ -171,11 +198,14 @@ def vsm(tokens, test_tokens, docSchemas, querySchemas):
         document = (author, quotes)
         invertedIndex = indexDocument(document, docSchemas, invertedIndex)
 
+    if docSchemas[0] == 'n':
+        invertedIndex = normalize_term_frequency(invertedIndex)
+
     print("--- finished creating inverted index ---")
 
     # {author: retrieved documents}
     queriedDocuments = {}
-
+    cosineSimNormDocVectorLengths = getDocVectorLengths(invertedIndex, docCount, docSchemas)
     # {author: correct documents}
     # (correct documents is just the author because we want to retrieve THE author of the quote)
 
@@ -184,6 +214,6 @@ def vsm(tokens, test_tokens, docSchemas, querySchemas):
         print(f"retrieving relevant documents. Done {count}", end='\r')
         count += 1
         for quote in quotes:
-            queriedDocuments[author] = retrieveDocuments(quote, invertedIndex, docSchemas, querySchemas, docCount)
+            queriedDocuments[author] = retrieveDocuments(quote, invertedIndex, docSchemas, querySchemas, docCount, cosineSimNormDocVectorLengths)
 
     return queriedDocuments

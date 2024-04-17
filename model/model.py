@@ -61,17 +61,59 @@ def model():
         out_file.write(str(tfc_tfx))
 
     print()
+    print("doing vector space with txc nfx")
+    txc_nfx = vsm(training_tokens_dictionary, testing_tokens_dictionary, 'txc', 'nfx')
+
+    with open(os.path.join(out_folder, "txc_nfx.txt"), 'w') as out_file:
+        out_file.write(str(txc_nfx))
+
+    print()
+    print("doing vector space with tfx tfx")
+    tfx_tfx = vsm(training_tokens_dictionary, testing_tokens_dictionary, 'tfx', 'tfx')
+
+    with open(os.path.join(out_folder, "tfx_tfx.txt"), 'w') as out_file:
+        out_file.write(str(tfx_tfx))
+
+    print()
+    print("doing vector space with nxx bpx")
+    nxx_bpx = vsm(training_tokens_dictionary, testing_tokens_dictionary, 'nxx', 'bpx')
+
+    with open(os.path.join(out_folder, "nxx_bpx.txt"), 'w') as out_file:
+        out_file.write(str(nxx_bpx))
+
+    print()
+    print("doing vector space with bfx bfx")
+    bfx_bfx = vsm(training_tokens_dictionary, testing_tokens_dictionary, 'bfx', 'bfx')
+
+    with open(os.path.join(out_folder, "bfx_bfx.txt"), 'w') as out_file:
+        out_file.write(str(bfx_bfx))
+
+    print()
+    print("doing vector space with bxx bpx")
+    bxx_bpx = vsm(training_tokens_dictionary, testing_tokens_dictionary, 'bxx', 'bpx')
+
+    with open(os.path.join(out_folder, "bxx_bpx.txt"), 'w') as out_file:
+        out_file.write(str(bxx_bpx))
+
+    print()
+    print("doing vector space with txc txx")
+    txc_txx = vsm(training_tokens_dictionary, testing_tokens_dictionary, 'txc', 'txx')
+
+    with open(os.path.join(out_folder, "txc_txx.txt"), 'w') as out_file:
+        out_file.write(str(txc_txx))
+
+    print()
     print("doing vector space with bxx bxx")
     bxx_bxx = vsm(training_tokens_dictionary, testing_tokens_dictionary, 'bxx', 'bxx')
 
     with open(os.path.join(out_folder, "bxx_bxx.txt"), 'w') as out_file:
         out_file.write(str(bxx_bxx))
 
-    print()
-    print("training bert model to make predictions")
-    bert_predictions = bert(train_quotes_dictionary, test_quotes_dictionary)
+    # print()
+    # print("training bert model to make predictions")
+    # bert_predictions = bert(train_quotes_dictionary, test_quotes_dictionary)
 
-    with open(os.path.join(out_folder, "bert.txt"), 'w') as out_file:
-        out_file.write(str(bert_predictions))
+    # with open(os.path.join(out_folder, "bert.txt"), 'w') as out_file:
+    #     out_file.write(str(bert_predictions))
 
     return
