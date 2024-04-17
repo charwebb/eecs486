@@ -1,103 +1,147 @@
-import numpy as np
+import requests
+from bs4 import BeautifulSoup, Tag
+import os
+import shutil
+import random
 import pandas as pd
-import tensorflow as tf
-from transformers import BertTokenizer, TFBertForSequenceClassification
-from sklearn.preprocessing import LabelEncoder
+import re
+import csv, sys
 
-# Load data
-def bert(training_quotes_dictionary, test_quotes_dictionary):
+def bert():
+    seinfeldData()
+    southParkData()
+    officeData()
+    return
 
-    # flatten data so it is of type dataFrame like:
-    # quote        author
-    # "something"  office_jim
-    # "else"       southpark_kenny
-    # ... etc.
+def cleanCharacterColumn(name):
+    name = re.sub(r'/.*|\(.*|&.*|\[.*', '', name)
+    return name.strip().upper()
 
-    print("flattening data into data frames")
 
-    flattened_training_data = [(quote, author) for author, quotes in training_quotes_dictionary.items() for quote in quotes]
-    flattened_test_data = [(quote, author) for author, quotes in test_quotes_dictionary.items() for quote in quotes]
-    train_df = pd.DataFrame(flattened_training_data, columns=['quote', 'character'])
-    val_df = train_df.sample(frac=0.1, random_state=12)
-    train_df = train_df.drop(val_df.index)
-    test_df = pd.DataFrame(flattened_test_data, columns=['quote', 'character'])
+def seinfeldData():
+    output_directory = 'TVShowQuotes'
+    quotes_csv = 'seinfeld_quotes.csv'
 
-    # print(train_df)
-    # print(val_df)
-    # print(test_df)
+    # Make training and testing directories
+    train_dir=output_directory + "-Train"
+    test_dir=output_directory + "-Test"
+    os.makedirs(train_dir, exist_ok=True)
+    os.makedirs(test_dir, exist_ok=True)
 
-    print("tokenizing data")
+    df = pd.read_csv(quotes_csv)
+    df['Character'] = df['Character'].apply(cleanCharacterColumn)
+    df['Dialogue'] = df['Dialogue'].astype(str)
+    df = df[df['Dialogue'].apply(lambda x: len(x.split()) > 7)] # Only gets lines with 7+ words
 
-    tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-    X_train = tokenizer(train_df['quote'].tolist(), padding=True, truncation=True, max_length=256, return_tensors='tf')
-    X_val = tokenizer(val_df['quote'].tolist(), padding=True, truncation=True, max_length=256, return_tensors='tf')
-    X_test = tokenizer(test_df['quote'].tolist(), padding=True, truncation=True, max_length=256, return_tensors='tf')
+    character_counts = df['Character'].value_counts().to_dict()
+    character_counts = {k: v for k, v in character_counts.items() if k} # Removes all empties
+    top_character_counts = {character: count for character, count in character_counts.items() if count > 35} # Only keeps top occurances
 
-    X_train = {key: X_train[key].numpy() for key in X_train}
-    X_val = {key: X_val[key].numpy() for key in X_val}
-    X_test = {key: X_test[key].numpy() for key in X_test}
+    for character in top_character_counts:
+            group = df[df['Character'] == character]
+            dialogues = group["Dialogue"].tolist()
+            #print(dialogues)
 
-    # print(X_train)
-    # print(X_val)
-    # print(X_test)
+            random.shuffle(dialogues)
+            split_idx = int(len(dialogues) * 0.10)
+            test_dialogues = dialogues[:split_idx]
+            train_dialogues = dialogues[split_idx:]
 
-    # Encode labels
+            # Filename for each character
+            test_filename = os.path.join(test_dir, "Seinfeld_{}.txt".format(character.upper()))
+            train_filename = os.path.join(train_dir, "Seinfeld_{}.txt".format(character.upper()))
 
-    label_encoder = LabelEncoder()
-    y_train = label_encoder.fit_transform(train_df['character'])
-    y_val = label_encoder.transform(val_df['character'])
-    num_classes = len(label_encoder.classes_)
-    print(num_classes)
+            with open(test_filename, 'w', encoding='utf-8') as file:
+                file.writelines(line + "\n" for line in test_dialogues)
 
-    # print(y_train)
-    # print(y_val)
+            with open(train_filename, 'w', encoding='utf-8') as file:
+                file.writelines(line + "\n" for line in train_dialogues)
 
-    model = TFBertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=num_classes)
+    return
 
-    optimizer = tf.keras.optimizers.legacy.Adam(learning_rate=2e-5)
-    loss = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)
-    metrics = [tf.keras.metrics.SparseCategoricalAccuracy('accuracy')]
-    model.compile(optimizer=optimizer, loss=loss, metrics=metrics)
+def southParkData():
+    output_directory = 'TVShowQuotes'
+    quotes_csv = 'southpark_quotes.csv'
+        # Make training and testing directories
+    train_dir=output_directory + "-Train"
+    test_dir=output_directory + "-Test"
+    os.makedirs(train_dir, exist_ok=True)
+    os.makedirs(test_dir, exist_ok=True)
 
-    history = model.fit(
-    X_train, y_train,
-    validation_data=(X_val, y_val),
-    epochs=2,
-    batch_size=32
-    )
+    df = pd.read_csv(quotes_csv)
+    df['Character'] = df['Character'].apply(cleanCharacterColumn)
+    df['Line'] = df['Line'].astype(str)
+    df = df[df['Line'].apply(lambda x: len(x.split()) > 7)] # Only gets lines with 7+ words
+    character_counts = df['Character'].value_counts().to_dict()
 
-    test_loss, test_acc = model.evaluate(X_val, y_val)
-    print(f'Validation accuracy: {test_acc}')
+    # Removes all empties
+    character_counts = {k: v for k, v in character_counts.items() if k}
 
-    predictions = model.predict(X_test)
-    predicted_labels = np.argmax(predictions.logits, axis=1)
+    # Only keeps top occurances
+    top_character_counts = {character: count for character, count in character_counts.items() if count > 35}
 
-    predicted_labels_original = label_encoder.inverse_transform(predicted_labels)
+    for character in top_character_counts:
+        group = df[df['Character'] == character]
+        lines = group["Line"].tolist()
+        random.shuffle(lines)
 
-    # print(X_test)
-    # print(predicted_labels_original)
+        split_idx = int(len(lines) * 0.10)
+        test_lines = lines[:split_idx]
+        train_lines = lines[split_idx:]
 
-    # Initialize dictionary to store actual test labels and predicted labels with percentages
-    predicted_labels_dict = {}
+        # Filename for each character
+        test_filename = os.path.join(test_dir, "SouthPark_{}.txt".format(character.upper()))
+        train_filename = os.path.join(train_dir, "SouthPark_{}.txt".format(character.upper()))
 
-    # Loop through each actual test label and corresponding predicted label
-    for actual_label, predicted_label in zip(test_df['character'], predicted_labels_original):
-        # If the actual label is not already in the dictionary, add it with an empty list as value
-        if actual_label not in predicted_labels_dict:
-            predicted_labels_dict[actual_label] = []
+        with open(test_filename, 'w', encoding='utf-8') as file:
+            file.writelines(line for line in test_lines)
 
-        # Append the predicted label to the list of corresponding predicted labels
-        predicted_labels_dict[actual_label].append(predicted_label)
+        with open(train_filename, 'w', encoding='utf-8') as file:
+            file.writelines(line for line in train_lines)
+    return
 
-    # Calculate the percentage of predictions for each actual test label
-    for actual_label, predicted_labels in predicted_labels_dict.items():
-        # Count the occurrences of each predicted label
-        label_counts = pd.Series(predicted_labels).value_counts()
+def officeData():
+    quotes_csv = 'office_quotes.csv'
+    output_directory = 'TVShowQuotes'
 
-        # Calculate the percentage of predictions for each predicted label
-        percentages = [(label, count / len(predicted_labels)) for label, count in label_counts.items()]
+    # Make training and testing directories
+    train_dir=output_directory + "-Train"
+    test_dir=output_directory + "-Test"
+    os.makedirs(train_dir, exist_ok=True)
+    os.makedirs(test_dir, exist_ok=True)
+    character_quotes = {}
 
-        # Update the dictionary with predicted labels and their percentages
-        predicted_labels_dict[actual_label] = percentages
+    with open(quotes_csv, newline='') as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            character = row['speaker']
+            script = row['line_text']
 
-    return predicted_labels_dict
+            if len(script.split()) > 7:
+                charList = character.split("/")
+                for char in charList:
+                    if char in character_quotes:
+                        character_quotes[char].append(script)
+                    else:
+                        character_quotes[char] = [script]
+
+        for character in character_quotes:
+            quotes = character_quotes[character]
+            # Only keeps top occurances
+            if(len(quotes) > 35):
+                random.shuffle(quotes)
+                split_idx = int(len(quotes) * 0.10)
+                test_quotes = quotes[:split_idx]
+                train_quotes = quotes[split_idx:]
+                # Filename for each character
+                test_filename = os.path.join(test_dir, "TheOffice_{}.txt".format(character.upper()))
+                train_filename = os.path.join(train_dir, "TheOffice_{}.txt".format(character.upper()))
+
+                with open(test_filename, 'w', encoding='utf-8') as file:
+                    file.writelines(line + "\n" for line in test_quotes)
+
+                with open(train_filename, 'w', encoding='utf-8') as file:
+                    file.writelines(line + "\n" for line in train_quotes)
+
+
+        return
