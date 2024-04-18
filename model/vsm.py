@@ -1,10 +1,3 @@
-# regular vector space model
-# Charles Webb
-# uniqname: charwebb
-# For EECS 486: Information Retrieval W24
-
-import sys
-import os
 from math import sqrt, log
 import random
 

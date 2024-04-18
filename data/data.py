@@ -1,11 +1,9 @@
-import requests
-from bs4 import BeautifulSoup, Tag
 import os
 import shutil
 import random
 import pandas as pd
 import re
-import csv, sys
+import csv
 
 def data():
     # 525 quotes = 20 people
