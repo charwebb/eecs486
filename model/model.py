@@ -68,12 +68,20 @@ def get_quotes(folder):
 
 def do_vsm(training_tokens_dictionary, testing_tokens_dictionary, out_folder, tokenization):
 
+    # Do our vector space model with all 9 different weighting schemes
     print()
     print(f"doing vector space with {tokenization} tfc tfx")
     tfc_tfx = vsm(training_tokens_dictionary, testing_tokens_dictionary, 'tfc', 'tfx')
 
     with open(os.path.join(out_folder, f"{tokenization}_tfc_tfx.txt"), 'w') as out_file:
         out_file.write(str(tfc_tfx))
+
+    print()
+    print(f"doing vector space with {tokenization} tfx nfx")
+    tfx_nfx = vsm(training_tokens_dictionary, testing_tokens_dictionary, 'tfx', 'nfx')
+
+    with open(os.path.join(out_folder, f"{tokenization}_tfx_nfx.txt"), 'w') as out_file:
+        out_file.write(str(tfx_nfx))
 
     print()
     print(f"doing vector space with {tokenization} txc nfx")
