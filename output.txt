@@ -1,162 +1,162 @@
 Prediction Method: bigram_bfx_bfx
-Accuracy: 0.0310
-Macro-averaged Precision: 0.0113
-Macro-averaged Recall: 0.1126
-F1 Macro Score: 0.0205
+Accuracy: 0.0392
+Macro-averaged Precision: 0.0119
+Macro-averaged Recall: 0.1191
+F1 Macro Score: 0.0217
 
 Prediction Method: bigram_bxx_bpx
-Accuracy: 0.0261
-Macro-averaged Precision: 0.0096
-Macro-averaged Recall: 0.0962
-F1 Macro Score: 0.0175
+Accuracy: 0.0375
+Macro-averaged Precision: 0.0103
+Macro-averaged Recall: 0.1028
+F1 Macro Score: 0.0187
 
 Prediction Method: bigram_bxx_bxx
-Accuracy: 0.0163
-Macro-averaged Precision: 0.0075
-Macro-averaged Recall: 0.0750
-F1 Macro Score: 0.0136
+Accuracy: 0.0326
+Macro-averaged Precision: 0.0088
+Macro-averaged Recall: 0.0881
+F1 Macro Score: 0.0160
 
 Prediction Method: bigram_nxx_bpx
-Accuracy: 0.0049
+Accuracy: 0.0098
 Macro-averaged Precision: 0.0036
 Macro-averaged Recall: 0.0359
 F1 Macro Score: 0.0065
 
 Prediction Method: bigram_tfc_tfx
-Accuracy: 0.1126
-Macro-averaged Precision: 0.0222
-Macro-averaged Recall: 0.2219
-F1 Macro Score: 0.0403
+Accuracy: 0.1289
+Macro-averaged Precision: 0.0220
+Macro-averaged Recall: 0.2202
+F1 Macro Score: 0.0400
 
 Prediction Method: bigram_tfx_nfx
-Accuracy: 0.0065
-Macro-averaged Precision: 0.0039
-Macro-averaged Recall: 0.0392
-F1 Macro Score: 0.0071
+Accuracy: 0.0098
+Macro-averaged Precision: 0.0051
+Macro-averaged Recall: 0.0506
+F1 Macro Score: 0.0092
 
 Prediction Method: bigram_tfx_tfx
-Accuracy: 0.0065
-Macro-averaged Precision: 0.0041
-Macro-averaged Recall: 0.0408
-F1 Macro Score: 0.0074
+Accuracy: 0.0098
+Macro-averaged Precision: 0.0051
+Macro-averaged Recall: 0.0506
+F1 Macro Score: 0.0092
 
 Prediction Method: bigram_txc_nfx
-Accuracy: 0.1109
-Macro-averaged Precision: 0.0210
-Macro-averaged Recall: 0.2104
-F1 Macro Score: 0.0383
+Accuracy: 0.1240
+Macro-averaged Precision: 0.0207
+Macro-averaged Recall: 0.2072
+F1 Macro Score: 0.0377
 
 Prediction Method: bigram_txc_txx
-Accuracy: 0.0832
-Macro-averaged Precision: 0.0183
-Macro-averaged Recall: 0.1827
-F1 Macro Score: 0.0332
+Accuracy: 0.1028
+Macro-averaged Precision: 0.0181
+Macro-averaged Recall: 0.1811
+F1 Macro Score: 0.0329
 
 Prediction Method: standard_bfx_bfx
-Accuracy: 0.0277
-Macro-averaged Precision: 0.0111
-Macro-averaged Recall: 0.1109
-F1 Macro Score: 0.0202
+Accuracy: 0.0212
+Macro-averaged Precision: 0.0127
+Macro-averaged Recall: 0.1272
+F1 Macro Score: 0.0231
 
 Prediction Method: standard_bxx_bpx
-Accuracy: 0.0261
-Macro-averaged Precision: 0.0090
-Macro-averaged Recall: 0.0897
-F1 Macro Score: 0.0163
+Accuracy: 0.0196
+Macro-averaged Precision: 0.0098
+Macro-averaged Recall: 0.0979
+F1 Macro Score: 0.0178
 
 Prediction Method: standard_bxx_bxx
-Accuracy: 0.0196
-Macro-averaged Precision: 0.0067
-Macro-averaged Recall: 0.0669
-F1 Macro Score: 0.0122
+Accuracy: 0.0179
+Macro-averaged Precision: 0.0077
+Macro-averaged Recall: 0.0767
+F1 Macro Score: 0.0139
 
 Prediction Method: standard_nxx_bpx
-Accuracy: 0.0016
-Macro-averaged Precision: 0.0018
-Macro-averaged Recall: 0.0179
-F1 Macro Score: 0.0033
+Accuracy: 0.0033
+Macro-averaged Precision: 0.0020
+Macro-averaged Recall: 0.0196
+F1 Macro Score: 0.0036
 
 Prediction Method: standard_tfc_tfx
-Accuracy: 0.1077
-Macro-averaged Precision: 0.0254
-Macro-averaged Recall: 0.2545
-F1 Macro Score: 0.0463
+Accuracy: 0.1060
+Macro-averaged Precision: 0.0223
+Macro-averaged Recall: 0.2235
+F1 Macro Score: 0.0406
 
 Prediction Method: standard_tfx_nfx
-Accuracy: 0.0016
-Macro-averaged Precision: 0.0018
-Macro-averaged Recall: 0.0179
-F1 Macro Score: 0.0033
+Accuracy: 0.0049
+Macro-averaged Precision: 0.0020
+Macro-averaged Recall: 0.0196
+F1 Macro Score: 0.0036
 
 Prediction Method: standard_tfx_tfx
-Accuracy: 0.0016
-Macro-averaged Precision: 0.0018
-Macro-averaged Recall: 0.0179
-F1 Macro Score: 0.0033
+Accuracy: 0.0049
+Macro-averaged Precision: 0.0020
+Macro-averaged Recall: 0.0196
+F1 Macro Score: 0.0036
 
 Prediction Method: standard_txc_nfx
-Accuracy: 0.1077
-Macro-averaged Precision: 0.0266
-Macro-averaged Recall: 0.2659
-F1 Macro Score: 0.0483
+Accuracy: 0.1060
+Macro-averaged Precision: 0.0238
+Macro-averaged Recall: 0.2382
+F1 Macro Score: 0.0433
 
 Prediction Method: standard_txc_txx
-Accuracy: 0.0604
-Macro-averaged Precision: 0.0168
-Macro-averaged Recall: 0.1680
-F1 Macro Score: 0.0306
+Accuracy: 0.0669
+Macro-averaged Precision: 0.0153
+Macro-averaged Recall: 0.1533
+F1 Macro Score: 0.0279
 
 Prediction Method: stemmed_bfx_bfx
-Accuracy: 0.0228
-Macro-averaged Precision: 0.0119
-Macro-averaged Recall: 0.1191
-F1 Macro Score: 0.0217
+Accuracy: 0.0163
+Macro-averaged Precision: 0.0127
+Macro-averaged Recall: 0.1272
+F1 Macro Score: 0.0231
 
 Prediction Method: stemmed_bxx_bpx
-Accuracy: 0.0147
-Macro-averaged Precision: 0.0093
-Macro-averaged Recall: 0.0930
-F1 Macro Score: 0.0169
+Accuracy: 0.0163
+Macro-averaged Precision: 0.0101
+Macro-averaged Recall: 0.1011
+F1 Macro Score: 0.0184
 
 Prediction Method: stemmed_bxx_bxx
-Accuracy: 0.0098
-Macro-averaged Precision: 0.0064
-Macro-averaged Recall: 0.0636
-F1 Macro Score: 0.0116
+Accuracy: 0.0114
+Macro-averaged Precision: 0.0078
+Macro-averaged Recall: 0.0783
+F1 Macro Score: 0.0142
 
 Prediction Method: stemmed_nxx_bpx
-Accuracy: 0.0016
-Macro-averaged Precision: 0.0018
-Macro-averaged Recall: 0.0179
-F1 Macro Score: 0.0033
+Accuracy: 0.0033
+Macro-averaged Precision: 0.0020
+Macro-averaged Recall: 0.0196
+F1 Macro Score: 0.0036
 
 Prediction Method: stemmed_tfc_tfx
-Accuracy: 0.1142
-Macro-averaged Precision: 0.0269
-Macro-averaged Recall: 0.2692
-F1 Macro Score: 0.0489
+Accuracy: 0.1077
+Macro-averaged Precision: 0.0238
+Macro-averaged Recall: 0.2382
+F1 Macro Score: 0.0433
 
 Prediction Method: stemmed_tfx_nfx
-Accuracy: 0.0016
-Macro-averaged Precision: 0.0018
-Macro-averaged Recall: 0.0179
-F1 Macro Score: 0.0033
+Accuracy: 0.0049
+Macro-averaged Precision: 0.0020
+Macro-averaged Recall: 0.0196
+F1 Macro Score: 0.0036
 
 Prediction Method: stemmed_tfx_tfx
-Accuracy: 0.0016
-Macro-averaged Precision: 0.0018
-Macro-averaged Recall: 0.0179
-F1 Macro Score: 0.0033
+Accuracy: 0.0049
+Macro-averaged Precision: 0.0020
+Macro-averaged Recall: 0.0196
+F1 Macro Score: 0.0036
 
 Prediction Method: stemmed_txc_nfx
-Accuracy: 0.1223
-Macro-averaged Precision: 0.0279
-Macro-averaged Recall: 0.2790
-F1 Macro Score: 0.0507
+Accuracy: 0.1126
+Macro-averaged Precision: 0.0246
+Macro-averaged Recall: 0.2463
+F1 Macro Score: 0.0448
 
 Prediction Method: stemmed_txc_txx
-Accuracy: 0.0604
-Macro-averaged Precision: 0.0178
-Macro-averaged Recall: 0.1778
-F1 Macro Score: 0.0323
+Accuracy: 0.0620
+Macro-averaged Precision: 0.0165
+Macro-averaged Recall: 0.1648
+F1 Macro Score: 0.0300
 
