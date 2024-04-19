@@ -1,5 +1,7 @@
 # Tweet Predictor
 
+Github Repo: https://github.com/charwebb/eecs486
+
 For EECS 486: Information Retrieval
 
 To run this code:
@@ -25,6 +27,8 @@ If you are getting import errors:
 and run:
 
 * pip3 install -r requirements.txt
+
+* All required packages must be listed in requirements.txt, not imported ad hoc
 
 ## Description ##
 
