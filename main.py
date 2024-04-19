@@ -1,5 +1,5 @@
 # For EECS 486
-# Tweet Prediction
+# TV Character Prediction
 
 from data.data import data
 from model.model import model
